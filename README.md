@@ -1,6 +1,6 @@
-<b> Alex Felipe Barbosa 18/06/2020 </b> <br>
+<b> Alex Felipe Barbosa 18/06/2020 </b> <br><br><br>
 Repositório criado para o Modulo de React do BootCamp FullStack do IGTI <br>
-Repositório do Desafio 2 do BootCamp <br>
+Repositório do Desafio 2 do BootCamp <br><br>
 <b> Desafio </b> <br>
 Criar um app para listar paises a partir da API https://restcountries.eu/rest/v2/all <br>
 Input para filtrar os paises <br>
@@ -75,6 +75,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-#� �R�e�a�c�t�_�D�e�s�a�f�i�o�2�_�I�G�T�I�
-�
-�
