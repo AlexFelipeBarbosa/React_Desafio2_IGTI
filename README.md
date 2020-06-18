@@ -1,6 +1,9 @@
 <b> Alex Felipe Barbosa 18/06/2020 </b> <br>
 Repositório criado para o Modulo de React do BootCamp FullStack do IGTI <br>
-
+Repositório do Desafio 2 do BootCamp <br>
+<b> Desafio </b> <br>
+Criar um app para listar paises a partir da API https://restcountries.eu/rest/v2/all <br>
+Input para filtrar os paises <br>
 
 
 -----------------------------------------------------------------------------
