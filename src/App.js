@@ -9,6 +9,8 @@ export default class App extends Component {
     this.state = {
       allCountries: [],
       filteredCountries: [],
+      filteredPopulation: 0,
+      filteredArea: 0,
       filter: '',
     };
   }
@@ -22,6 +24,7 @@ export default class App extends Component {
         return {
           id: numericCode,
           name,
+          filterName: name.toLowerCase(),
           flag,
           population,
           area,
@@ -29,20 +32,62 @@ export default class App extends Component {
       }
     );
 
+    const filteredPopulation = this.calculateTotalPopulationFrom(allCountries);
+    const filteredArea = this.calculateTotalAreaFrom(allCountries);
+
     this.setState({
       allCountries: allCountries,
-      filteredCountries: allCountries,
+      filteredCountries: Object.assign([], allCountries),
+      filteredPopulation,
+      filteredArea,
     });
   }
+
+  calculateTotalPopulationFrom = (countries) => {
+    const totalPopulation = countries.reduce((accumalator, current) => {
+      return accumalator + current.population;
+    }, 0);
+    return totalPopulation;
+  };
+
+  calculateTotalAreaFrom = (countries) => {
+    const totalArea = countries.reduce((accumalator, current) => {
+      return accumalator + current.area;
+    }, 0);
+    return totalArea;
+  };
 
   handleChangeFilter = (newText) => {
     this.setState({
       filter: newText,
     });
+
+    const filterLowerCase = newText.toLowerCase();
+
+    const filteredCountries = this.state.allCountries.filter((country) => {
+      return country.filterName.includes(filterLowerCase);
+    });
+
+    const filteredPopulation = this.calculateTotalPopulationFrom(
+      filteredCountries
+    );
+
+    const filteredArea = this.calculateTotalAreaFrom(filteredCountries);
+
+    this.setState({
+      filteredCountries,
+      filteredPopulation,
+      filteredArea,
+    });
   };
 
   render() {
-    const { allCountries, filter } = this.state;
+    const {
+      filteredCountries,
+      filter,
+      filteredArea,
+      filteredPopulation,
+    } = this.state;
 
     return (
       <div className="container">
@@ -55,8 +100,14 @@ export default class App extends Component {
         </h6>
         <h6>-- Input para filtrar os paises</h6>
         <h1>React Countries </h1>
-        <Header filter={filter} onChangeFilter={this.handleChangeFilter} />
-        <Countries countries={allCountries} />
+        <Header
+          filter={filter}
+          countryCount={filteredCountries.length}
+          totalPopulation={filteredPopulation}
+          totalArea={filteredArea}
+          onChangeFilter={this.handleChangeFilter}
+        />
+        <Countries countries={filteredCountries} />
       </div>
     );
   }
