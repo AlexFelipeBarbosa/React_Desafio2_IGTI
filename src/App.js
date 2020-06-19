@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Countries from './components/countries/Countries';
+import Header from './components/header/Header';
 
 export default class App extends Component {
   constructor() {
@@ -6,6 +8,8 @@ export default class App extends Component {
 
     this.state = {
       allCountries: [],
+      filteredCountries: [],
+      filter: '',
     };
   }
 
@@ -27,13 +31,19 @@ export default class App extends Component {
 
     this.setState({
       allCountries: allCountries,
+      filteredCountries: allCountries,
     });
   }
 
-  render() {
-    const { allCountries } = this.state;
+  handleChangeFilter = (newText) => {
+    this.setState({
+      filter: newText,
+    });
+  };
 
-    console.log(allCountries);
+  render() {
+    const { allCountries, filter } = this.state;
+
     return (
       <div className="container">
         <h5>
@@ -45,6 +55,8 @@ export default class App extends Component {
         </h6>
         <h6>-- Input para filtrar os paises</h6>
         <h1>React Countries </h1>
+        <Header filter={filter} onChangeFilter={this.handleChangeFilter} />
+        <Countries countries={allCountries} />
       </div>
     );
   }
