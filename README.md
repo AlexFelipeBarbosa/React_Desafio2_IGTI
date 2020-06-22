@@ -3,7 +3,11 @@ Repositório criado para o Modulo de React do BootCamp FullStack do IGTI <br>
 Repositório do Desafio 2 do BootCamp <br><br>
 <b> Desafio </b> <br>
 Criar um app para listar paises a partir da API https://restcountries.eu/rest/v2/all <br>
-Input para filtrar os paises <br>
+Input para filtrar os paises <br><br>
+
+<strong> Publicado em: https://alexbarbosa-igti-react01.netlify.app/ </strong> <br><br>
+
+<strong> Mais detalhes em: http://www.alexbarbosa.info/2020/06/22/react-realizando-um-input-para-pesquisa-de-paises/  </strong> <br> <br>
 
 
 -----------------------------------------------------------------------------
