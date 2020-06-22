@@ -91,14 +91,11 @@ export default class App extends Component {
 
     return (
       <div className="container">
-        <h5>
-          Desafio realizado no Modulo de React do BootCamp FullStack do IGTI
-        </h5>
-        <h6>
-          -- Criação de um app para listar países a partir da API
-          https://restcountries.eu/rest/v2/all
+        <h5 style={styles.centeredTitle}>Alex Felipe Barbosa</h5>
+        <h6 style={styles.centeredTitle}>
+          {' '}
+          Desafio realizado no Modulo de React do Bootcamp FullStack do IGTI
         </h6>
-        <h6>-- Input para filtrar os paises</h6>
         <h1 style={styles.centeredTitle}>React Countries </h1>
         <Header
           filter={filter}
