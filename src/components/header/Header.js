@@ -11,7 +11,13 @@ export default class Header extends Component {
     const { filter, countryCount, totalPopulation, totalArea } = this.props;
     return (
       <div className={css.flexRow}>
-        <input type="text" value={filter} onChange={this.handleInputChange} /> |{' '}
+        <input
+          placeholder="Digite o Pais"
+          type="text"
+          value={filter}
+          onChange={this.handleInputChange}
+        />{' '}
+        |{' '}
         <span className={css.countries}>
           Paises: <strong> {countryCount}</strong>{' '}
         </span>{' '}

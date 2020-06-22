@@ -99,7 +99,7 @@ export default class App extends Component {
           https://restcountries.eu/rest/v2/all
         </h6>
         <h6>-- Input para filtrar os paises</h6>
-        <h1>React Countries </h1>
+        <h1 style={styles.centeredTitle}>React Countries </h1>
         <Header
           filter={filter}
           countryCount={filteredCountries.length}
@@ -112,3 +112,9 @@ export default class App extends Component {
     );
   }
 }
+
+const styles = {
+  centeredTitle: {
+    textAlign: 'center',
+  },
+};
